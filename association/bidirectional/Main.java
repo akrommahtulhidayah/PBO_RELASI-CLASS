@@ -2,11 +2,20 @@ package association.bidirectional;
 
 public class Main {
     public static void main(String[] args) {
-        PemainBasket pemain = new PemainBasket("Point Guard");
-        Supporter supporter1 = new Supporter();
-        Supporter supporter2 = new Supporter();
+        Tim timA = new Tim("Garuda Basket Club");
 
-        supporter1.memberiDukungan(pemain);
-        supporter2.memberiDukungan(pemain);
+        Pemain pemain1 = new Pemain("Andi", 7);
+        Pemain pemain2 = new Pemain("Budi", 10);
+
+        // Hubungan dua arah
+        timA.tambahPemain(pemain1);
+        timA.tambahPemain(pemain2);
+
+        // Menampilkan info tim dan pemain
+        timA.tampilkanTim();
+
+        System.out.println("\n=== Cek dari sisi Pemain ===");
+        pemain1.tampilkanInfo();
+        pemain2.tampilkanInfo();
     }
 }
